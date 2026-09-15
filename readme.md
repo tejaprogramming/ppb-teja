@@ -1,1 +1,3 @@
-# readme baru yey
+Belajar #Git.
+
+project untuk mempelajari dasar penggunaan Git.
