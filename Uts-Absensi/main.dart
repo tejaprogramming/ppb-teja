@@ -13,10 +13,9 @@ void main() {
     print('4. Tambah mahasiswa');
     print('5. Cari mahasiswa (nama)');
     print('6. Ubah status absensi');
-    //fitur butuh dikonfigurasi lanjutan
-    // print('7. Rekap per mahasiswa             [Sedang]');
-    // print('8. Persentase kehadiran            [Sulit]');
-    // print('9. Mahasiswa di bawah batas hadir  [Sulit]');
+    print('7. Rekap per mahasiswa');
+    print('8. Persentase kehadiran');
+    print('9. Mahasiswa di bawah batas hadir');
     print('0. Keluar');
 
     final pilihan = bacaInt('Pilih menu', min: 0, max: 9);
@@ -33,13 +32,12 @@ void main() {
         cariMahasiswa();
       case 6:
         ubahStatus();
-      //fitur butuh dikonfigurasi lanjutan
-      // case 7:
-      //   tampilkanRekap();
-      // case 8:
-      //   tampilkanPersentase();
-      // case 9:
-      //   tampilkanDiBawahBatas();
+      case 7:
+        tampilkanRekap();
+      case 8:
+        tampilkanPersentase();
+      case 9:
+        tampilkanDiBawahBatas();
       case 0:
         berjalan = false;
     }
