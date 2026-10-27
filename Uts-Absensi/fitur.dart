@@ -138,23 +138,103 @@ void ubahStatus() {
   );
 }
 
+
+// fitur butuh dikonfigurasi lanjutan
 /// Menu 7 [Sedang]: menampilkan jumlah setiap status per mahasiswa.
-void tampilkanRekap() {
-  // TODO: untuk setiap mahasiswa, hitung berapa kali hadir, izin, sakit, dan alpa
-  // dari semua pertemuan.
-  print('Fitur belum tersedia.');
-}
+// void tampilkanRekap() {
+//   // TODO: untuk setiap mahasiswa, hitung berapa kali hadir, izin, sakit, dan alpa
+//   // dari semua pertemuan.
+//   final totalPertemuan = absensi.length;
+//   print('\n=== Rekap Absensi ($totalPertemuan pertemuan) ===');
+//   if (daftarMahasiswa.isEmpty) {
+//     print('Belum ada data mahasiswa.');
+//     return;
+//   }
+//   for (final mhs in daftarMahasiswa) {
+//     final nim = mhs['nim'] as String;
+//     final nama = mhs['nama'] as String;
+//     int hadir = 0;
+//     int izin = 0;
+//     int sakit = 0;
+//     int alpa = 0;
+//     for (final dataPertemuan in absensi.values) {
+//       final status = dataPertemuan[nim];
+//       switch (status) {
+//         case StatusHadir.hadir:
+//           hadir++;
+//         case StatusHadir.izin:
+//           izin++;
+//         case StatusHadir.sakit:
+//           sakit++;
+//         case StatusHadir.alpa:
+//           alpa++;
+//         case null:
+//           break;
+//       }
+//     }
+//     print('$nama | hadir $hadir | izin $izin | sakit $sakit | alpa $alpa');
+//   }
+//   print('Fitur belum tersedia.');
+// }
 
-/// Menu 8 [Sulit]: menampilkan persentase kehadiran setiap mahasiswa.
-void tampilkanPersentase() {
-  // TODO: persentase = jumlah hadir / jumlah pertemuan x 100.
-  // Tampilkan 1 angka di belakang koma.
-  print('Fitur belum tersedia.');
-}
+// /// Menu 8 [Sulit]: menampilkan persentase kehadiran setiap mahasiswa.
+// void tampilkanPersentase() {
+//   // TODO: persentase = jumlah hadir / jumlah pertemuan x 100.
+//   // Tampilkan 1 angka di belakang koma.
+//   final totalPertemuan = absensi.length;
+//   print('\n=== Persentase Kehadiran ===');
+//   if (daftarMahasiswa.isEmpty) {
+//     print('Belum ada data mahasiswa.');
+//     return;
+//   }
+//   for (final mhs in daftarMahasiswa) {
+//     final nim = mhs['nim'] as String;
+//     final nama = mhs['nama'] as String;
+//     int jumlahHadir = 0;
+//     for (final dataPertemuan in absensi.values) {
+//       if (dataPertemuan[nim] == StatusHadir.hadir) {
+//         jumlahHadir++;
+//       }
+//     }
+//     final persentase = totalPertemuan > 0 
+//         ? (jumlahHadir / totalPertemuan) * 100 
+//         : 0.0;
 
-/// Menu 9 [Sulit]: menampilkan mahasiswa dengan kehadiran di bawah batas.
-void tampilkanDiBawahBatas() {
-  // TODO: tampilkan mahasiswa yang persentase kehadirannya < batasKehadiran
-  // (lihat data.dart) beserta persentasenya.
-  print('Fitur belum tersedia.');
-}
+//     print('$nama | $jumlahHadir/$totalPertemuan pertemuan | ${persentase.toStringAsFixed(1)}%');
+//   }
+// }
+
+// /// Menu 9 [Sulit]: menampilkan mahasiswa dengan kehadiran di bawah batas.
+// void tampilkanDiBawahBatas() {
+//   // TODO: tampilkan mahasiswa yang persentase kehadirannya < batasKehadiran
+//   // (lihat data.dart) beserta persentasenya.
+//   final totalPertemuan = absensi.length;
+//   final batasFormatted = batasKehadiran.toStringAsFixed(0);
+//   print('\n=== Kehadiran di Bawah $batasFormatted% ===');
+//   if (daftarMahasiswa.isEmpty) {
+//     print('Belum ada data mahasiswa.');
+//     return;
+//   }
+//   var adaDiBawahBatas = false;
+//   for (final mhs in daftarMahasiswa) {
+//     final nim = mhs['nim'] as String;
+//     final nama = mhs['nama'] as String;
+//     int jumlahHadir = 0;
+//     for (final dataPertemuan in absensi.values) {
+//       if (dataPertemuan[nim] == StatusHadir.hadir) {
+//         jumlahHadir++;
+//       }
+//     }
+//     final persentase = totalPertemuan > 0 
+//         ? (jumlahHadir / totalPertemuan) * 100 
+//         : 0.0;
+
+//     if (persentase < batasKehadiran) {
+//       print('$nama | ${persentase.toStringAsFixed(1)}%');
+//       adaDiBawahBatas = true;
+//     }
+//   }
+//   if (!adaDiBawahBatas) {
+//     print('Tidak ada mahasiswa di bawah batas kehadiran.');
+//   }
+// }
